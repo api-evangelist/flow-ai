@@ -1,0 +1,34 @@
+generated: '2026-07-19'
+method: searched
+source: https://flow-ai.com/docs
+summary:
+  model: bring-your-own-keys
+  types:
+  - provider-api-key
+  - sso
+  notes: >-
+    flowai-harness runs inside the host's own infrastructure, so there is no
+    Flow-AI-issued end-user API credential. Agents authenticate to model providers
+    with the host's own keys (e.g. ANTHROPIC_API_KEY, OpenAI, Bedrock, Azure,
+    Vertex) supplied via environment/config, and to warehouses with the host's own
+    connection credentials. The Production tier adds multi-user Studio with SSO/RBAC
+    and a credential vault for managing those secrets.
+schemes:
+- name: model-provider-keys
+  type: apiKey
+  in: env
+  location: environment variables / runtime config
+  example_names:
+  - ANTHROPIC_API_KEY
+  scope: model provider access for live runs
+  sources:
+  - https://flow-ai.com/docs
+- name: studio-sso
+  type: sso
+  tier: production
+  capabilities:
+  - SSO
+  - RBAC
+  - credential-vault
+  sources:
+  - https://flow-ai.com/pricing
