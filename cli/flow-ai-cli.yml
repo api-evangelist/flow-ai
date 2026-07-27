@@ -1,0 +1,41 @@
+generated: '2026-07-19'
+method: searched
+source: https://flow-ai.com/docs/reference/studio
+name: flowai-harness
+summary: >-
+  The flowai-harness CLI runs Flow AI Studio - the local browser interface for a
+  Flow AI runtime app. It imports a FlowAIApp instance (or a zero-argument factory)
+  via a package.module:symbol target and serves the packaged Studio UI plus the API
+  routes from a single Python process.
+install:
+- method: source
+  command: pip install flowai-harness
+verify: ./.venv/bin/flowai-harness --version
+commands:
+- name: dev
+  description: Run Studio in development mode with hot-reloading and frontend build
+    flags.
+  example: flowai-harness dev --app my_agent.studio_app:app
+- name: serve
+  description: Run Studio in production mode, serving the packaged UI and API.
+  example: flowai-harness serve --app my_agent.studio_app:app
+flags:
+- name: --app
+  required: true
+  description: Import target in package.module:symbol form resolving to a FlowAIApp
+    or a zero-arg factory.
+- name: --host
+  default: 127.0.0.1
+  description: Binding address.
+- name: --port
+  default: '4111'
+  description: Port number.
+- name: --no-studio
+  description: Serve API routes only, omitting the Studio UI.
+- name: --version
+  description: Print the installed flowai-harness version.
+dev_only_flags:
+- --studio-dir
+- --frontend-host
+- --frontend-port
+- --no-frontend

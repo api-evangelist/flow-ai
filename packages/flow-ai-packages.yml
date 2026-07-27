@@ -1,0 +1,44 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/flowaicom
+packages:
+- language: python
+  registry: pypi
+  name: flow-judge
+  url: https://pypi.org/project/flow-judge/
+  install: pip install flow-judge
+  official: true
+  version: 0.1.2
+  repo: https://github.com/flowaicom/flow-judge
+  description: Lightweight library for evaluating LLM applications with the open Flow-Judge-v0.1
+    (3.8B) evaluator model; supports vLLM, Hugging Face Transformers, Llamafile, and
+    Baseten backends.
+- language: python
+  registry: github
+  name: flow-eval
+  url: https://github.com/flowaicom/flow-eval
+  install: pip install git+https://github.com/flowaicom/flow-eval
+  official: true
+  repo: https://github.com/flowaicom/flow-eval
+  description: Flow AI evals engine (Apache-2.0).
+- language: python
+  registry: source
+  name: flowai-harness
+  url: https://github.com/flowaicom/flowai-harness
+  install: pip install flowai-harness
+  official: true
+  version: 1.0.0a1
+  repo: https://github.com/flowaicom/flowai-harness
+  description: Source-available Python package (v1.0.0-alpha.1 private preview) exposing
+    the Rust-native runtime for building data agents with typed plans, approvals, references,
+    evals, streaming events, and MCP tool serving.
+- language: go
+  registry: pkg.go.dev
+  name: github.com/flowaicom/flowai-sdk-go
+  url: https://pkg.go.dev/github.com/flowaicom/flowai-sdk-go
+  install: go get github.com/flowaicom/flowai-sdk-go
+  official: true
+  version: v0.0.8
+  repo: https://github.com/flowaicom/flowai-sdk-go
+  description: Go client SDK for Flow AI services (components, operations, apierrors,
+    retry).

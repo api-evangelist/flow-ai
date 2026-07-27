@@ -1,19 +1,52 @@
 aid: flow-ai
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/flow-ai.png
 name: Flow AI
-description: Flow AI is a company surfaced as a portfolio company of seedcamp and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: Flow AI builds infrastructure for embedding schema-aware, deterministic
+  AI agents directly inside analytical SaaS products. Its flagship flowai-harness is
+  a Rust-native runtime with a Python SDK for building production-grade data agents
+  on top of your own data product, organized around five primitives - a data catalog
+  agents use to resolve intent, typed plans and actions executed as auditable state
+  machines with human approval gates, an embedded runtime, Studio (a local UI to run,
+  debug, and evaluate agents), and self-improvement. It runs inside your infrastructure
+  with your own model keys (OpenAI, Anthropic, Gemini, Llama, Mistral, Qwen) and warehouse
+  (Postgres, Snowflake, BigQuery, Databricks, DuckDB). The team also publishes the
+  open Flow Judge LLM-as-a-judge evaluation model and the flow-eval evaluation engine.
 url: https://raw.githubusercontent.com/api-evangelist/flow-ai/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
+- project-a
 - seedcamp
+- lifeline
+- moonfire
 x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
+- Artificial Intelligence
+- AI Agents
+- Agent Infrastructure
+- LLM Evaluation
+- Data
+- Runtime
+- SDK
+- Model Context Protocol
+- Analytics
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -22,4 +55,59 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: http://flow-ai.com
+  url: https://flow-ai.com
+- type: DeveloperPortal
+  url: https://flow-ai.com/docs
+- type: Documentation
+  url: https://flow-ai.com/docs
+- type: APIReference
+  url: https://flow-ai.com/docs/reference
+- type: GettingStarted
+  url: https://flow-ai.com/docs/quickstart
+- type: Pricing
+  url: https://flow-ai.com/pricing
+- type: Blog
+  url: https://flow-ai.com/blog
+- type: GitHubOrganization
+  url: https://github.com/flowaicom
+- type: PrivacyPolicy
+  url: https://flow-ai.com/legal
+- type: Support
+  url: mailto:hello@flow-ai.com
+- type: LinkedIn
+  url: https://linkedin.com/company/flowaicom
+- type: Twitter
+  url: https://x.com/flowaicom
+- type: YouTube
+  url: https://youtube.com/@flowaicom
+- type: LLMsTxt
+  url: llms/flow-ai-llms.txt
+- type: Packages
+  url: packages/flow-ai-packages.yml
+- type: SDKs
+  url: packages/flow-ai-packages.yml
+- type: MCPServer
+  url: mcp/flow-ai-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: ChangeLog
+  url: changelog/flow-ai-changelog.yml
+- type: CLI
+  url: cli/flow-ai-cli.yml
+- type: Authentication
+  url: authentication/flow-ai-authentication.yml
+- type: Conventions
+  url: conventions/flow-ai-conventions.yml
+- type: Sandbox
+  url: sandbox/flow-ai-sandbox.yml
+- type: Conformance
+  url: conformance/flow-ai-conformance.yml
+- type: Compliance
+  url: https://flow-ai.com/legal
+- type: DomainSecurity
+  url: security/flow-ai-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

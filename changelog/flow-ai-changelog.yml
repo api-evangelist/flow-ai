@@ -1,0 +1,32 @@
+generated: '2026-07-19'
+method: searched
+source: https://flow-ai.com/docs/changelog
+scheme: pep440
+current_version: 1.0.0a1
+notes: >-
+  Python package version 1.0.0a1 corresponds to the v1.0.0-alpha.1 private-preview
+  tag. Per the docs, the public API is stable enough to build against, but breaking
+  changes are still possible during the alpha cycle.
+entries:
+- version: 1.0.0a1
+  tag: v1.0.0-alpha.1
+  date: '2026-06-09'
+  stability: alpha
+  breaking: true
+  additions:
+  - Ergonomic public API for building role agents - define_coordinator, define_planner,
+    define_executor, define_specialist.
+  - Native Rust-backed runtime via create_runtime(...), with async-iterable event
+    streams and specialist dispatch.
+  - layered_prompt(...) with deterministic rendering.
+  - Customer-configured glimpses for references.
+  - Support for tagged action unions.
+  - MCP tool serving - runtime tools can be exposed over MCP stdio and Streamable
+    HTTP.
+  structural:
+  - Replaced project-specific runtime identity with TenantIdentity and define_tenant(...);
+    runtime isolation keyed by resource_id.
+  - Reorganized prompt layering into explicit layers (domain_knowledge, operational_rules)
+    independent from tenancy.
+  highlights: First public private-preview package of the flowai-harness runtime and
+    Python authoring API.

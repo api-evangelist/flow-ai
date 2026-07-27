@@ -1,0 +1,40 @@
+generated: '2026-07-19'
+method: searched
+source: https://flow-ai.com/docs/concepts
+summary: >-
+  Cross-cutting runtime semantics of the flowai-harness data-agent runtime. Flow AI
+  is a Python/Rust SDK and embedded runtime, not a hosted REST API, so these are
+  runtime-contract conventions rather than HTTP request/response conventions.
+authentication:
+  style: bring-your-own model-provider keys (env/config); Production Studio adds SSO/RBAC.
+  detail: authentication/flow-ai-authentication.yml
+tenancy:
+  model: TenantIdentity via define_tenant(...); runtime isolation keyed by resource_id.
+  purpose: scopes catalog, storage, and runs to a customer/workspace/environment.
+plans_and_actions:
+  model: typed plan and action schemas validated by the runtime and executed as auditable
+    state machines; plans are persisted and status-tracked.
+approvals:
+  model: runtime approval gates pause sensitive work until the host application approves
+    or rejects an action before the action dispatcher applies it.
+references_and_glimpses:
+  model: references are typed handles to stored values; a glimpse is the small summary
+    stored beside a reference so agents can reason about a payload without resolving
+    the full value. Used to pass large/sensitive/intermediate data between tools, plans,
+    executors, and host code.
+streaming:
+  model: runtime events are an async-iterable observable stream (text, reasoning, tool
+    calls, plan/action status) rendered by an application or Studio.
+prompts:
+  model: layered_prompt(...) with deterministic rendering; explicit layers including
+    domain_knowledge and operational_rules.
+mcp:
+  model: runtime tools can be exposed as MCP servers over stdio or Streamable HTTP.
+  detail: mcp/flow-ai-mcp.yml
+idempotency:
+  supported: false
+  notes: No documented HTTP idempotency-key contract (not a hosted REST API).
+cross_links:
+  authentication: authentication/flow-ai-authentication.yml
+  changelog: changelog/flow-ai-changelog.yml
+  sandbox: sandbox/flow-ai-sandbox.yml

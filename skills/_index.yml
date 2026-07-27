@@ -1,0 +1,21 @@
+generated: '2026-07-19'
+method: generated
+source: https://flow-ai.com/docs/reference
+note: >-
+  Flow AI publishes no OpenAPI (it is a Python/Rust SDK + runtime, not a hosted REST
+  API). This skill is grounded in the real public flowai_harness Python surface
+  documented at https://flow-ai.com/docs/reference and the changelog - not fabricated
+  operationIds. The provider also publishes AGENTS.md and /ai.json grounding files
+  (see llms/flow-ai-llms.txt).
+skills:
+- file: flow-ai-build-data-agent.md
+  name: Build a coordinator-planner-executor data agent
+  api: python:flowai_harness
+  operations:
+  - define_tenant
+  - define_coordinator
+  - define_planner
+  - define_executor
+  - define_specialist
+  - define_runtime
+  - create_runtime

@@ -1,0 +1,22 @@
+generated: '2026-07-19'
+method: searched
+source: https://flow-ai.com/docs/guides/testing
+summary: >-
+  flowai-harness ships deterministic test facilities so an agent topology can be
+  unit-tested without a live model provider. This is the harness's test-vs-live
+  separation: swap the live provider for a deterministic interpreter to exercise the
+  runtime, tools, plans, and approvals reproducibly. The Production tier additionally
+  provides a hosted sandbox executor.
+test_mode:
+- name: deterministic interpreters
+  description: Two deterministic interpreters that stand in for a live model provider
+    so agent topology (tools, plans, executors, approvals) can be unit-tested reproducibly
+    without provider calls.
+  source: https://flow-ai.com/docs/guides/testing
+- name: sandbox executor
+  tier: production
+  description: Hosted sandbox executor for running agent actions in an isolated environment.
+  source: https://flow-ai.com/pricing
+notes:
+- No live model-provider keys are required to run the deterministic interpreters.
+- No published magic test card / IBAN values - this is not a payments provider.

@@ -1,0 +1,27 @@
+generated: '2026-07-19'
+method: searched
+source:
+- https://flow-ai.com/legal
+- https://flow-ai.com/docs/guides/mcp
+standards:
+- id: gdpr
+  conforms: true
+  evidence: Privacy policy states adherence to the General Data Protection Regulation
+    (EU 2016/679); EU or US data residency offered.
+  source: https://flow-ai.com/legal
+- id: mcp
+  conforms: true
+  evidence: flowai-harness exposes runtime tools as Model Context Protocol servers
+    over stdio and Streamable HTTP.
+  source: https://flow-ai.com/docs/guides/mcp
+- id: soc2
+  conforms: false
+- id: iso-27001
+  conforms: false
+- id: oauth2
+  conforms: false
+  evidence: No hosted OAuth API; auth is bring-your-own provider keys.
+compliance_program:
+- name: GDPR (EU 2016/679)
+  published: true
+  url: https://flow-ai.com/legal

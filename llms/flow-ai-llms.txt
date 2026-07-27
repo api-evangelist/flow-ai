@@ -1,0 +1,94 @@
+# Flow AI
+
+> Infrastructure for embedding schema-aware, deterministic AI assistants directly inside analytical SaaS products. Flow AI provides the backend intelligence layer for analytical SaaS companies whose products expose structured, predictive, or model-driven data to end users.
+
+## Product
+
+- [Home](https://flow-ai.com/index.md): Product overview, problem statement, and the five primitives of the Flow AI harness (Data, Plans, Runtime, Studio, Self-improvement)
+- [Pricing](https://flow-ai.com/pricing.md): The two tiers — Development (source-available, build locally) and Production (custom, runs in your infrastructure) — with the bring-your-own-keys/warehouse stack and the comparison matrix
+- [For AI agents](https://flow-ai.com/for-ai.md): Structured context for AI agents researching Flow AI — capabilities, terminology, and grounding rules
+- [Judge research](https://flow-ai.com/judge.md): Open evaluation framework for LLM-as-a-judge models (Flow Judge v0.1)
+
+## Documentation
+
+Developer documentation for the flowai-harness (rendered at https://flow-ai.com/docs; full markdown in /llms-full.txt).
+
+- [flowai-harness](https://flow-ai.com/docs.md): Build production-grade data agents with typed plans and actions, tool execution, human approval, and observable runtime events.
+- [Quickstart](https://flow-ai.com/docs/quickstart.md): This quickstart builds a simple multi-agent system that:
+- [Changelog](https://flow-ai.com/docs/changelog.md): 1.0.0a1 is the Python package version for the v1.0.0-alpha.1 private preview tag. The public API is stable enough to build against, but breaking…
+- [Overview](https://flow-ai.com/docs/concepts.md): Flow AI agents are assembled from a small set of harness components: tenants, catalogs, agents, plans, tools, action dispatchers, references,…
+- [Action dispatcher](https://flow-ai.com/docs/concepts/action-dispatcher.md): The action dispatcher is the host-side function that executes approved plan actions.
+- [Agents](https://flow-ai.com/docs/concepts/agents.md): Agents are configured harness roles with different defaults and built-in capabilities.
+- [Approvals](https://flow-ai.com/docs/concepts/approvals.md): Approvals are runtime gates that pause sensitive work until the host application responds.
+- [Catalog](https://flow-ai.com/docs/concepts/catalog.md): The catalog is the semantic layer that connects user intent to the data schema and business knowledge in a workspace.
+- [Multi-agent architectures](https://flow-ai.com/docs/concepts/execution-model.md): The harness lets you choose how much structure each use case needs. A run can be a direct specialist call, a coordinator routing to one or more…
+- [Plans](https://flow-ai.com/docs/concepts/plans.md): Plans make agent work explicit before it happens.
+- [Prompts](https://flow-ai.com/docs/concepts/prompts.md): Prompts define how each agent should behave.
+- [References & glimpses](https://flow-ai.com/docs/concepts/references.md): Agents frequently need to pass around large, expensive, or sensitive data between tools, planner agents, executor agents, action dispatchers, and…
+- [Runtime](https://flow-ai.com/docs/concepts/runtime.md): The runtime turns your Flow AI definitions into an executable agent system.
+- [Tenants](https://flow-ai.com/docs/concepts/tenant.md): A tenant identifies the customer, workspace, or environment the runtime is operating for.
+- [Tools](https://flow-ai.com/docs/concepts/tools.md): Tools are model-callable capabilities exposed to agents.
+- [Overview](https://flow-ai.com/docs/guides.md): Use these guides when you already understand the main Flow AI concepts and want to complete a specific implementation task.
+- [Execute approved actions](https://flow-ai.com/docs/guides/action-dispatcher.md): The action dispatcher is the host adapter that applies approved plan actions to your platform.
+- [Require approvals](https://flow-ai.com/docs/guides/approvals.md): Approvals let the runtime pause sensitive work until your application approves or rejects it.
+- [Profile and export a catalog](https://flow-ai.com/docs/guides/catalog-profiling.md): Use this guide when you want to prepare a database for agents before runtime execution.
+- [Configure a data environment](https://flow-ai.com/docs/guides/data-environment.md): A data environment connects runtime tools to the data dependencies they need: catalog metadata, catalog search, key-value storage, target databases,…
+- [Evals](https://flow-ai.com/docs/guides/evals.md): Use evals when you want a repeatable contract for an agent run: expected tool trajectory, planned actions, executed actions, final response text, or…
+- [Judge final responses](https://flow-ai.com/docs/guides/judge-evals.md): Use define_final_response_eval(...) when the runtime's final user-facing text is part of the product outcome. This is common for action-taking…
+- [Knowledge and documents](https://flow-ai.com/docs/guides/knowledge.md): Use this guide when you want agents to retrieve source material, documents, or extracted knowledge through built-in data tools.
+- [Expose tools over MCP](https://flow-ai.com/docs/guides/mcp.md): flowai-harness can expose runtime tools as Model Context Protocol (MCP) servers over stdio or Streamable HTTP. Use this when an MCP-aware client…
+- [Work with references and glimpses](https://flow-ai.com/docs/guides/references-and-glimpses.md): Use references when agents need to pass large, sensitive, or intermediate data between tools, plans, executors, and host code without copying the…
+- [Streaming events](https://flow-ai.com/docs/guides/streaming.md): Runtime events let your application observe agent execution as it happens.
+- [Studio](https://flow-ai.com/docs/guides/studio.md): Studio is the local browser interface for a flowai-harness app. It runs next to your Python runtime and lets you inspect agents, chat with the…
+- [Debug system prompts](https://flow-ai.com/docs/guides/system-prompts.md): Use this guide when an agent receives the wrong system prompt, no prompt, or a stale prompt.
+- [Test agents without provider calls](https://flow-ai.com/docs/guides/testing.md): The harness ships two deterministic interpreters so you can unit-test your agent topology without a live model provider:
+- [Reference](https://flow-ai.com/docs/reference.md): API reference for the flowai_harness public surface. Most pages render the exported classes, functions, and type aliases directly from their…
+- [Action dispatcher](https://flow-ai.com/docs/reference/action-dispatcher.md): The action dispatcher is the host-side write boundary for approved plan actions. It is where Flow AI hands normalized, validated actions back to your…
+- [Agents](https://flow-ai.com/docs/reference/agents.md): Role-specific agent constructors. Each returns an AgentSpec that define_runtime(...) composes into a RuntimeSpec.
+- [Evals](https://flow-ai.com/docs/reference/evals.md): Python eval authoring types, helpers, result models, and the synchronous runner. For task-oriented walkthroughs, start with the Evals guide and…
+- [Glimpse](https://flow-ai.com/docs/reference/glimpse.md): A glimpse is the small summary stored beside a reference. It lets an agent reason about what a referenced value contains without resolving the full…
+- [MCP](https://flow-ai.com/docs/reference/mcp.md): Helpers for exposing Flow AI runtime tools as Model Context Protocol servers.
+- [Plans](https://flow-ai.com/docs/reference/plans.md): Plans are typed, reviewable containers for the actions an agent intends to take. In a planner/executor flow, a planner creates and stores a plan, the…
+- [Prompts](https://flow-ai.com/docs/reference/prompts.md): Prompts are the system instructions attached to agents. They define the agent's role, communication style, operating rules, tool-use guidance, domain…
+- [References](https://flow-ai.com/docs/reference/references.md): References are typed handles to stored values. They let agents pass large, expensive, or sensitive payloads between tools, plans, executors, and host…
+- [Runtime](https://flow-ai.com/docs/reference/runtime.md): A runtime is the executable harness instance created from a validated RuntimeSpec. It is required whenever you want agents to do work: the spec is…
+- [Runtime events](https://flow-ai.com/docs/reference/runtime-events.md): Runtime events are the observable stream emitted while a run is happening. They let an application or Studio UI render text, reasoning, tool calls,…
+- [Schema and utilities](https://flow-ai.com/docs/reference/schema-utilities.md): Small public helpers used by multiple authoring APIs.
+- [Studio](https://flow-ai.com/docs/reference/studio.md): Studio apps are local registries of one or more workspace runtime bindings. The CLI imports a FlowAIApp and serves the Studio UI and API from the…
+- [Tenant](https://flow-ai.com/docs/reference/tenant.md): A tenant identifies the customer, workspace, deployment, or test environment that a runtime is executing for. Flow AI uses tenant identity to scope…
+- [Tools](https://flow-ai.com/docs/reference/tools.md): Tools are explicit model-callable capabilities attached to agents. They define what an agent may call, what input shape the runtime validates, what…
+- [Unions](https://flow-ai.com/docs/reference/unions.md): Unions describe payloads that can take one of several typed shapes. In Flow AI they are most often used for plan action schemas, where each action…
+- [Coordinator, planner, and executor tutorial](https://flow-ai.com/docs/tutorials/coordinator-planner-executor.md): The examples/coordinator_planner_executor sample is a complete local Flow AI Harness app. This tutorial explains how the sample is put together and…
+- [Run your first eval](https://flow-ai.com/docs/tutorials/first-eval.md): Author test cases for a tiny agent, score it, and read the results in ten to fifteen minutes.
+- [Build an product inventory agent](https://flow-ai.com/docs/tutorials/inventory-scenario.md): The inventory agent example uses a published SQLite artifact, local catalog/KV/index files, a mutable FastAPI mock platform, and a…
+
+## Company
+
+- [About](https://flow-ai.com/about.md): Team, mission, and company background
+- [Events](https://flow-ai.com/events.md): Cooking in Knowledge meetups and other Flow AI events, upcoming and past
+- [Legal](https://flow-ai.com/legal.md): Privacy policy and data processing practices
+
+## Blog
+
+- [All posts](https://flow-ai.com/blog.md): Engineering and product writing from the Flow AI team
+- [How to Transform Your SaaS Into an Assistant-Native Platform](https://flow-ai.com/blog/how-to-transform-your-saas-into-an-assistant-native-platform.md): Roadmap for evolving SaaS products into agent-first experiences
+- [Gen UI for Data-Centric SaaS](https://flow-ai.com/blog/gen-ui-for-data-centric-saas.md): How generative UI delivers analytical clarity beyond chat
+- [AI Agents for Data-Centric SaaS](https://flow-ai.com/blog/ai-agents-for-data-centric-saas.md): Why customer-facing data agents need schema-aware reasoning
+- [Context is King: Scaling Data Agents](https://flow-ai.com/blog/context-is-king-scaling-data-agents.md): Engineering context for production-grade analytical agents
+- [Solving Long Context for Data Agents](https://flow-ai.com/blog/solving-long-context-for-data-agents.md): Techniques for keeping data agents accurate over long sessions
+- [Advancing Long-Context LLM Performance in 2025](https://flow-ai.com/blog/advancing-long-context-llm-performance-in-2025.md): Research notes on long-context evaluation and scaling
+- [Flow Judge](https://flow-ai.com/blog/flow-judge.md): Open-source LLM-as-a-judge model from Flow AI research
+- [Is Your Test Data Holding Back Your AI Agents?](https://flow-ai.com/blog/is-your-test-data-holding-back-your-ai-agents.md): Why test data quality determines agent reliability
+- [Automating Test Set Creation for Conversational AI Agents](https://flow-ai.com/blog/automating-test-set-creation-for-conversational-ai-agents.md): Pipeline for synthesizing evaluation datasets
+- [How Claude Became Our Project Manager](https://flow-ai.com/blog/how-claude-became-our-project-manager.md): Internal practices for AI-assisted product development
+- [How to Read Papers in 2026](https://flow-ai.com/blog/how-to-read-papers-in-2026.md): A modern research workflow for ML practitioners
+- [Vibescoping](https://flow-ai.com/blog/vibescoping.md): A pragmatic approach to scoping ambiguous AI projects
+
+## Agent resources
+
+- [Full content (one-shot ingestion)](https://flow-ai.com/llms-full.txt): Every page — including all documentation — concatenated into a single markdown file
+- [Agent instructions](https://flow-ai.com/AGENTS.md): Discovery, markdown access channels, grounding rules
+
+## Structured data
+
+The machine-readable manifest with canonical claims, disallowed claims, and capability ontology is at `/ai.json` (also linked via the `Link: rel="ai-manifest"` HTTP header on every page).
