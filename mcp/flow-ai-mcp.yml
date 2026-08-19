@@ -2,12 +2,10 @@ generated: '2026-07-19'
 method: searched
 status: published
 source: https://flow-ai.com/docs/guides/mcp
-summary: >-
-  flowai-harness can expose its runtime tools as Model Context Protocol (MCP)
-  servers, so an MCP-aware client (Claude, IDEs, agents) can call the data-agent
-  tools defined in a Flow AI runtime. This is a capability of the harness rather
-  than a single hosted endpoint operated by Flow AI - each host deploys its own
-  server bound to its runtime and tenant.
+summary: flowai-harness can expose its runtime tools as Model Context Protocol (MCP) servers, so an MCP-aware
+  client (Claude, IDEs, agents) can call the data-agent tools defined in a Flow AI runtime. This is a
+  capability of the harness rather than a single hosted endpoint operated by Flow AI - each host deploys
+  its own server bound to its runtime and tenant.
 server:
   name: flowai-harness
   transport:
@@ -18,6 +16,15 @@ server:
   - https://flow-ai.com/docs/guides/mcp
   - https://flow-ai.com/docs/reference/mcp
 notes:
-- Runtime tools attached to agents (model-callable capabilities) are surfaced as MCP
-  tools; the set of tools is defined per host runtime, not fixed by Flow AI.
+- Runtime tools attached to agents (model-callable capabilities) are surfaced as MCP tools; the set of
+  tools is defined per host runtime, not fixed by Flow AI.
 - Transports are stdio (local) and Streamable HTTP (remote).
+deployment:
+  mode: none
+  endpoint: https://flow-ai.com/docs/guides/mcp
+  verified: probed
+  probe: dead
+  note: the endpoint this manifest claimed did not answer; recorded as none rather than deleted so the
+    claim stays auditable
+  checked: '2026-08-12'
+  source: catalog MCP census
