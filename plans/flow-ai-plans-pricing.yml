@@ -1,0 +1,38 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://flow-ai.com/pricing
+sources:
+- https://flow-ai.com/pricing
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: negotiated
+delivery:
+  delivery: managed+licensed
+  method: page
+  read: '2026-10-07'
+  evidence: Run in production, inside your own infrastructure.
+  free_edition: Development
+published: true
+note: Page states 'Free for development. Flat monthly for production.' but gives no monthly figure; Production
+  is 'Custom' with 'Talk to founders'. Only numeric price is $0 for the Development tier. License described
+  as source-available for development/evaluation with a separate production-use license, 'No per-seat
+  math, no agent caps'.
+plan_count: 2
+currency: USD
+plans:
+- name: Development
+  price_text: $0
+  price: 0
+  currency: USD
+  period: none
+  included_quota: Build and prototype locally. Source-available. Local Dev Studio, five primitives, local
+    + scheduled Autoresearch, community support
+- name: Production
+  price_text: Custom
+  period: none
+  included_quota: Run in production, inside your own infrastructure. Multi-user Studio with SSO, RBAC,
+    audit log; sovereign deployment; production-use license; SLA and founders' support
